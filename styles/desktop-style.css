@@ -1,0 +1,91 @@
+header {
+    padding: 20px 0;
+}
+
+.menu {
+    position: absolute;
+    width: 1440px;
+    height: 167px;
+    left: 0px;
+    top: 0px;
+
+    background: #AC5858;
+}
+
+.menu h1 {
+    position: absolute;
+    width: 491px;
+    height: 58px;
+    left: 474px;
+    top: 54px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px;
+
+    color: #FFFFFF;
+}
+
+nav {
+    position: absolute;
+    width: 218px;
+    height: 24px;
+    left: 611px;
+    top: 122px;
+
+    text-align: center;
+}
+
+nav a {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+nav a:hover {
+    color: #ecea47;
+}
+
+form {
+    margin: 200px 15px;
+}
+
+form label, form legend {
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+.input-padrao {
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 25px;
+    width: 50%;
+}
+
+.salvar {
+    width: 20%;
+    padding: 15px 0;
+    background: #972020;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    transition: 1s all;
+    cursor: pointer;
+
+    position: relative;
+    left: 15%;
+}
+
+.salvar:hover {
+    background: #5c1313;
+    transform: scale(1.2);
+}
