@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/desktop-style.css">
+    
 </head>
 <body>
     <header>
@@ -16,7 +17,9 @@
 
     <main>
         <section class="formulario">
-            <form>
+            <form id="adiciona-contato">
+                <input type="hidden" id="field-id" value=""/>
+
                 <fieldset class="contato-nome">
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" placeholder="Insira o nome" size="15" required>
@@ -35,13 +38,13 @@
 
                 <fieldset class="contato-telefone">
                     <label for="telefone">Telefone:</label>
-                    <input type="text" id="telefone" placeholder="(XX) XXXXXX-XXX" size="15">
+                    <input type="text" id="telefone" placeholder="(XX) XXXXXX-XXX" size="15" required>
                 </fieldset>
 
                 <button id="salvar">Salvar contato</button>
             </form><hr>
         </section>
-        
+
         <section class="lista-contatos">
             <table>
                 <thead id="cabecalho-contato">
@@ -54,16 +57,12 @@
                     </tr>
                 </thead>
                 <tbody id="tabela-contatos">
-                    <tr class="contato">
-                        <td class="info-nome">Thiago</td>
-                        <td class="info-sobrenome">Brito</td>
-                        <td class="info-cpf">123.456.789-01</td>
-                        <td class="info-email">thiago@gmail.com</td>
-                        <td class="info-telefone">(11) 998221-639</td>
-                    </tr>
+                    
                 </tbody>
             </table>
         </section>
     </main>
+
+    <script src="scripts/adiciona-contato.js"></script>
 </body>
 </html>
