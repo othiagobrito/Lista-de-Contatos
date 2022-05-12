@@ -35,3 +35,30 @@ fieldset {
 #salvar:hover {
     background-color: #d1d1d1;
 }
+
+table {
+    width: 100%;
+    margin-top: 2em;
+	margin-bottom : .5em;
+    table-layout: fixed;
+    display: flow-root;
+}
+
+td, th {
+	padding: .9em;
+	margin: 0;
+	border: 1px solid #ccc;
+	text-align: center;
+    width: 10em;
+}
+
+th {
+    font-weight: bold;
+    background-color: #EEE;
+}
+
+.lista-contatos {
+	width: 30%;
+	height: 100%;
+	margin: 0 auto;
+}
