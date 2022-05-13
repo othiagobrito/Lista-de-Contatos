@@ -44,10 +44,10 @@ function listar_contatos() {
             for(var i = 0; i < rows.length; i++) {
                     tr += '<tr>';
                     tr += '<td onClick="atualizar(' + rows[i].id + ')">' + rows[i].nome + '</td>';
-                    tr += '<td>' + rows[i].sobrenome + '</td>';
-                    tr += '<td>' + rows[i].cpf + '</td>';
-                    tr += '<td>' + rows[i].email + '</td>';
-                    tr += '<td>' + rows[i].telefone + '</td>';
+                    tr += '<td onClick="atualizar(' + rows[i].id + ')">' + rows[i].sobrenome + '</td>';
+                    tr += '<td onClick="atualizar(' + rows[i].id + ')">' + rows[i].cpf + '</td>';
+                    tr += '<td onClick="atualizar(' + rows[i].id + ')">' + rows[i].email + '</td>';
+                    tr += '<td onClick="atualizar(' + rows[i].id + ')">' + rows[i].telefone + '</td>';
                     tr += '</tr>';                   
             }
                 table.innerHTML = tr;
