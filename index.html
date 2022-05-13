@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/desktop-style.css">
 
-    <script src="scripts/banco.js"></script>
+    <script src="scripts/db.js"></script>
 </head>
 <body>
     <header>
@@ -43,11 +43,12 @@
                 </fieldset>
 
                 <button id="salvar">Salvar contato</button>
+                <button id="apagar">Apagar contato</button>
             </form><hr>
         </section>
 
         <section class="lista-contatos">
-            <table>
+            <table id="tabela">
                 <thead id="cabecalho-contato">
                     <tr>
                         <th>Nome</th>
@@ -55,7 +56,6 @@
                         <th>CPF</th>
                         <th>Email</th>
                         <th>Telefone</th>
-                        <th colspan="2">Ações</th>
                     </tr>
                 </thead>
                 <tbody id="tabela-contatos">

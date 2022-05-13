@@ -27,12 +27,12 @@ fieldset {
     font-weight: bold;
 }
 
-#salvar {
+form button {
     border-radius: 10px;
     font-weight: bold;
 }
 
-#salvar:hover {
+form button:hover {
     background-color: #d1d1d1;
 }
 

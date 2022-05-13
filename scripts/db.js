@@ -4,6 +4,7 @@ var db = openDatabase("contatosDB", "1.0", "Lista de Contatos", 2 * 1024 * 1024)
 
 function pega_info() {
     document.getElementById("salvar").addEventListener("click", salvar);
+    document.getElementById("apagar").addEventListener("click", deletar);
 
     db.transaction(function(sql) {
         sql.executeSql("CREATE TABLE IF NOT EXISTS contatos (id INTEGER PRIMARY KEY, nome TEXT, sobrenome TEXT, cpf TEXT, email TEXT, telefone TEXT)");
@@ -22,17 +23,15 @@ function salvar() {
     
     if (nome.length > 0 && sobrenome.length > 0 && telefone.length > 0) {
         db.transaction(function(sql) {
-            if(id) {
-                sql.executeSql("UPDATE contatos SET nome=?, sobrenome=?, cpf=?, email=?, telefone=? WHERE id=?", [nome, sobrenome, cpf, email, telefone], null);
+            if (id) {
+                sql.executeSql("UPDATE contatos SET nome=?, sobrenome=?, cpf=?, email=?, telefone=? WHERE id=?", [nome, sobrenome, cpf, email, telefone, id], null);
             } else {
                 sql.executeSql("INSERT INTO contatos (nome, sobrenome, cpf, email, telefone) VALUES (?, ?, ?, ?, ?)", [nome, sobrenome, cpf, email, telefone]);
             }
         });
-    
-        listar_contatos();
-        inputSHOW(false);
     }
 
+    listar_contatos();
 }
 
 function listar_contatos() {        
@@ -49,18 +48,15 @@ function listar_contatos() {
                     tr += '<td>' + rows[i].cpf + '</td>';
                     tr += '<td>' + rows[i].email + '</td>';
                     tr += '<td>' + rows[i].telefone + '</td>';
-                    tr += '<td id="editar" class="acoes">Editar</td>';
-                    tr += '<td id="apgar" class="acoes">Apagar</td>';
                     tr += '</tr>';                   
             }
-                table.innerHTML = tr; 
+                table.innerHTML = tr;
 
         }, null);
     });
 }
 
 function atualizar(_id) {   
-    
     var id = document.getElementById("field-id");
     var nome = document.getElementById("nome");
     var sobrenome = document.getElementById("sobrenome");
@@ -81,6 +77,14 @@ function atualizar(_id) {
             telefone.value = rows.telefone;
         });
     });
-    inputSHOW(true);
 }
 
+function deletar() {
+    var id = document.getElementById("field-id").value;
+    
+    db.transaction(function(sql) {
+        sql.executeSql("DELETE FROM contatos WHERE id=?", [id]);
+    });
+    
+    listar_contatos();
+}
