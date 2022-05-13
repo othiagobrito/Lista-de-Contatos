@@ -21,7 +21,11 @@ function salvar() {
     var email = document.getElementById("email").value;
     var telefone = document.getElementById("telefone").value;
     
-    if (nome.length > 0 && sobrenome.length > 0 && telefone.length > 0) {
+    if (nome.length > 0 && sobrenome.length > 0 && telefone.length > 0 && !isNaN(telefone) && !isNaN(cpf)) {
+        nome = nome[0].toUpperCase() + nome.substr(1);
+        sobrenome = sobrenome[0].toUpperCase() + sobrenome.substr(1);
+        email = email.toLowerCase();
+
         db.transaction(function(sql) {
             if (id) {
                 sql.executeSql("UPDATE contatos SET nome=?, sobrenome=?, cpf=?, email=?, telefone=? WHERE id=?", [nome, sobrenome, cpf, email, telefone, id], null);
@@ -42,12 +46,12 @@ function listar_contatos() {
             var rows = resultado.rows;
             var tr = '';
             for(var i = 0; i < rows.length; i++) {
-                    tr += '<tr>';
-                    tr += '<td onClick="atualizar(' + rows[i].id + ')">' + rows[i].nome + '</td>';
-                    tr += '<td onClick="atualizar(' + rows[i].id + ')">' + rows[i].sobrenome + '</td>';
-                    tr += '<td onClick="atualizar(' + rows[i].id + ')">' + rows[i].cpf + '</td>';
-                    tr += '<td onClick="atualizar(' + rows[i].id + ')">' + rows[i].email + '</td>';
-                    tr += '<td onClick="atualizar(' + rows[i].id + ')">' + rows[i].telefone + '</td>';
+                    tr += '<tr class="contato">';
+                    tr += '<td class="contato-nome" onClick="atualizar(' + rows[i].id + ')">' + rows[i].nome + '</td>';
+                    tr += '<td class="contato-sobrenome" onClick="atualizar(' + rows[i].id + ')">' + rows[i].sobrenome + '</td>';
+                    tr += '<td class="contato-cpf" onClick="atualizar(' + rows[i].id + ')">' + rows[i].cpf + '</td>';
+                    tr += '<td class="contato-email" onClick="atualizar(' + rows[i].id + ')">' + rows[i].email + '</td>';
+                    tr += '<td class="contato-telefone" onClick="atualizar(' + rows[i].id + ')">' + rows[i].telefone + '</td>';
                     tr += '</tr>';                   
             }
                 table.innerHTML = tr;

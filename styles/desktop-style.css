@@ -36,8 +36,17 @@ form button:hover {
     background-color: #d1d1d1;
 }
 
-table {
+.barra-busca {
+    margin-top: 2em;
+    text-align: center;
+}
+
+#busca {
+    text-align: center;
     width: 100%;
+}
+
+table {
     margin-top: 2em;
 	margin-bottom : .5em;
     table-layout: fixed;
@@ -61,4 +70,8 @@ th {
 	width: 30%;
 	height: 100%;
 	margin: 0 auto;
+}
+
+.invisivel {
+	display: none;
 }
