@@ -1,0 +1,174 @@
+@media screen and (min-width: 1024px) {
+    header {
+        margin: 0;
+        height: 150px;
+        background-color: #9e0000;
+    }
+
+    .titulo {
+        padding-top: 45px;
+        text-align: center;
+
+        font-size: 60px;
+        font-weight: bold;
+        color: #ffffff;
+    }
+
+    .formulario {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    form fieldset {
+        display: inline-flex;
+        text-align: center;
+    }
+
+    form fieldset div {
+        padding-left: 15px;
+    }
+
+    .formulario label {
+        font-weight: bold;
+    }
+
+    form button {
+        margin-top: 15px;
+        border-radius: 10px;
+        font-weight: bold;
+    }
+
+    form button:hover {
+        background-color: #d1d1d1;
+    }
+
+    .barra-busca {
+        margin-top: .5em;
+        text-align: center;
+    }
+
+    #busca {
+        text-align: center;
+        width: 100%;
+    }
+
+    table {
+        margin-top: 2em;
+        margin-bottom : .5em;
+        table-layout: fixed;
+        display: flow-root;
+    }
+
+    td, th {
+        padding: .9em;
+        margin: 0;
+        border: 1px solid #ccc;
+        text-align: center;
+        width: 10em;
+    }
+
+    th {
+        font-weight: bold;
+        background-color: #EEE;
+    }
+
+    .lista-contatos {
+        width: 30%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    .invisivel {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    header {
+        margin: 0;
+        height: 200px;
+        background-color: #9e0000;
+    }
+
+    .titulo {
+        padding-top: 45px;
+        text-align: center;
+
+        font-size: 60px;
+        font-weight: bold;
+        color: #ffffff;
+    }
+
+    .formulario {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    fieldset input::after {
+        content: "\a";
+        white-space: pre;
+    }
+
+    form fieldset div {
+        padding-top: 5px;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .formulario label {
+        font-weight: bold;
+    }
+
+    form fieldset div button {
+        margin-top: 10px;
+        border-radius: 10px;
+        font-weight: bold;
+    }
+
+    form button:hover {
+        background-color: #d1d1d1;
+    }
+
+    .barra-busca {
+        margin-top: .5em;
+        text-align: center;
+    }
+
+    #busca {
+        text-align: center;
+        width: 100%;
+    }
+
+    table {
+        margin-top: 2em;
+        margin-left: -115px;
+        width: 350px;
+        text-align: center;
+    }
+
+    td, th {
+        padding: .2em;
+        margin: 0;
+        border: 1px solid #ccc;
+        text-align: center;
+    }
+
+    th {
+        font-weight: bold;
+        background-color: #EEE;
+    }
+
+    .contato-cpf, .contato-email {
+        display: none;
+    }
+
+    .lista-contatos {
+        width: 30%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    .invisivel {
+        display: none;
+    }
+}
